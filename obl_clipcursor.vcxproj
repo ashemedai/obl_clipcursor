@@ -108,11 +108,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.hpp" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="utils.hpp" />
     <ClInclude Include="windows_lean.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="exports.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="obl_clipcursor.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
