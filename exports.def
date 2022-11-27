@@ -1,0 +1,4 @@
+LIBRARY	"obl_clipcursor"
+EXPORTS
+OBSEPlugin_Query
+OBSEPlugin_Load
