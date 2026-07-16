@@ -5,25 +5,30 @@ root = true
 
 [*]
 charset = utf-8
-end_of_line = crlf
+end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.{cpp,hpp,h,c,cc,def}]
-indent_size = 4
-indent_style = tab
-
-[*.{cpp,hpp,h,c,cc,def}]
+end_of_line = crlf
 indent_size = 4
 indent_style = tab
 
 [*.rc]
+end_of_line = crlf
 indent_size = 4
 indent_style = tab
 
 [*.sln]
+end_of_line = crlf
 indent_size = 4
 indent_style = tab
 
 [*.md]
+end_of_line = lf
+trim_trailing_whitespace = false
+
+
+[{COMMIT_EDITMSG,MERGE_MSG,NOTES_EDITMSG,SQUASH_MSG,TAG_EDITMSG,git-rebase-todo}]
+end_of_line = lf
 trim_trailing_whitespace = false
