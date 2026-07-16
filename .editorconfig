@@ -1,0 +1,29 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{cpp,hpp,h,c,cc,def}]
+indent_size = 4
+indent_style = tab
+
+[*.{cpp,hpp,h,c,cc,def}]
+indent_size = 4
+indent_style = tab
+
+[*.rc]
+indent_size = 4
+indent_style = tab
+
+[*.sln]
+indent_size = 4
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
