@@ -19,15 +19,19 @@ end_of_line = crlf
 indent_size = 4
 indent_style = tab
 
-[*.{sln,vcxproj}]
+[*.sln]
 end_of_line = crlf
 indent_size = 4
 indent_style = tab
 
+[*.vcxproj]
+end_of_line = crlf
+indent_size = 2
+indent_style = space
+
 [*.md]
 end_of_line = lf
 trim_trailing_whitespace = false
-
 
 [{COMMIT_EDITMSG,MERGE_MSG,NOTES_EDITMSG,SQUASH_MSG,TAG_EDITMSG,git-rebase-todo}]
 end_of_line = lf
