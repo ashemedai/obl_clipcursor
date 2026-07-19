@@ -26,18 +26,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
     "#include ""winres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
     "\r\n"
     "\0"
@@ -51,9 +51,19 @@ END
 // Version
 //
 
+#define VER_MAJOR 2
+#define VER_MINOR 0
+#define VER_PATCH 0
+#define VER_BUILD 0
+
+#define STRINGIFY_HELPER(x) #x
+#define STRINGIFY(x) STRINGIFY_HELPER(x)
+
+#define VER_STRING STRINGIFY(VER_MAJOR) "." STRINGIFY(VER_MINOR) "." STRINGIFY(VER_PATCH) "." STRINGIFY(VER_BUILD)
+
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,0
- PRODUCTVERSION 1,0,0,0
+ FILEVERSION VER_MAJOR,VER_MINOR,VER_PATCH,VER_BUILD
+ PRODUCTVERSION VER_MAJOR,VER_MINOR,VER_PATCH,VER_BUILD
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +79,12 @@ BEGIN
         BLOCK "200004b0"
         BEGIN
             VALUE "FileDescription", "An OBSE plugin to fix inactive window scrolling"
-            VALUE "FileVersion", "1.0.0.0"
-            VALUE "InternalName", "obl_clip.dll"
-            VALUE "LegalCopyright", "Copyright (C) 2022"
-            VALUE "OriginalFilename", "obl_clip.dll"
+            VALUE "FileVersion", VER_STRING
+            VALUE "InternalName", "obl_clipcursor.dll"
+            VALUE "LegalCopyright", "Copyright (C) 2022-2026"
+            VALUE "OriginalFilename", "obl_clipcursor.dll"
             VALUE "ProductName", "Oblivion Inactive Window Scroll Fix"
-            VALUE "ProductVersion", "1.0.0.0"
+            VALUE "ProductVersion", VER_STRING
         END
     END
     BLOCK "VarFileInfo"
