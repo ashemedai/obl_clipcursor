@@ -2,7 +2,11 @@
 
 This is a port of the [Inactive Window Scroll Fix for Fallout 3](https://github.com/dekart811/fo3_clipcursor), made by [dekart811](https://github.com/dekart811).
 Which in itself is a port of the [Inactive Window Scroll Fix for Fallout New Vegas](https://github.com/luluco250/fnv_clipcursor), made by [luluco250](https://github.com/luluco250).
-All credits go to them.
+All credits for the initial version go to them.
+
+## Requirements
+
+This plugin requires **xOBSE 22.10 or newer**.
 
 As xOBSE is compiled with Visual Studio 2019, this project does similarly.
 
@@ -29,21 +33,31 @@ alt-tabbing).
 This has also been tested with ReShade and thus *should* be compatible with
 other overlays as well. 🎮
 
+---
+
 ## How to Build
 
-OBSE source code is not provided as per the license agreement, so to build this
-plugin you'll need to grab it [here](https://github.com/llde/xOBSE) (download
-the latest version).
+The xOBSE source code isn't bundled with this repository.
 
-After that, copy `src/common` and `src/obse` to the folder before where this
-project is located (like `src/obse_plugin_example`). It should look like this:
+Either of these gets you a correctly pinned, correctly named `xOBSE` folder:
 
-```
-📁...
-└📁common
-└📁obl_clipcursor
- └...
- └📄obl_clipcursor.sln
- └...
-└📁obse
+- `git clone https://github.com/llde/xOBSE.git`, then `git checkout <tag>`
+  (e.g. `git checkout 22.13`) inside the cloned repository.
+- Or download the [release's source code archive](https://github.com/llde/xOBSE/releases)
+  (either zip or tarball), which extracts to `xOBSE-<version>`. Rename the
+  extracted folder to `xOBSE`.
+
+You should have the resulting `xOBSE` folder as a sibling of this project (so
+not nested inside it). It should look like this:
+
+```text
+📁 ...
+└📁 obl_clipcursor
+ └ ...
+ └📄 obl_clipcursor.sln
+ └ ...
+└📁 xOBSE
+ └📁 common
+ └📁 obse
+ └ ...
 ```
