@@ -66,16 +66,29 @@ EXPORT bool OBSEPlugin_Load(
 }
 
 bool version_check(const OBSEInterface* obse) {
-	if (obse->isEditor)
+	if (obse->isEditor) {
+		_MESSAGE("obl_clipcursor does not run in the Construction Set");
 		return false;
+	}
 
 	if (obse->obseVersion < OBSE_VERSION_INTEGER) {
 		std::stringstream ss;
 		ss
-			<< "OBSE version is too old ("
-			<< obse->obseVersion
-			<< "), expected at least "
-			<< OBSE_VERSION_INTEGER;
+			<< "OBSE major version " << obse->obseVersion
+			<< " is too old, this plugin requires xOBSE 22.10 or newer";
+
+		std::string str = ss.str();
+		fatal_error(str.c_str(), false);
+		return false;
+	}
+
+	if (obse->oblivionVersion != OBLIVION_VERSION) {
+		std::stringstream ss;
+		ss
+			<< "Oblivion.exe version " << format_oblivion_version(obse->oblivionVersion)
+			<< " does not match the version this plugin was built for ("
+			<< format_oblivion_version(OBLIVION_VERSION)
+			<< ") ";
 
 		std::string str = ss.str();
 		fatal_error(str.c_str(), false);

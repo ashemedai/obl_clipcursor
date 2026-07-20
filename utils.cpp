@@ -9,9 +9,9 @@
 
 std::string get_last_error_message(size_t max_size) {
 	std::string output(max_size, '\0');
-	
+
 	get_last_error_message(output);
-	
+
 	return output;
 }
 
@@ -33,7 +33,7 @@ void get_last_error_message(std::string& output) {
 
 void fatal_error(const char* message, bool include_last_error) {
 	std::stringstream ss;
-	
+
 	if (message != NULL)
 		ss << message << '\n';
 
@@ -42,4 +42,13 @@ void fatal_error(const char* message, bool include_last_error) {
 
 	std::string output = ss.str();
 	_ERROR(output.c_str());
+}
+
+std::string format_oblivion_version(unsigned int version) {
+	std::stringstream ss;
+	ss
+		<< ((version >> 24) & 0xFF) << "."
+		<< ((version >> 16) & 0xFF) << ".0."
+		<< (version & 0xFFFF);
+	return ss.str();
 }
